@@ -22,6 +22,7 @@ typedef unsigned int u_long128;
 
 #define NULL 0
 #define PI 3.1415927f
+#define QUARTER_TURN 1.5707964f
 
 #define READ_UNCACHED(addr)      ((((u_int)(addr)) & 0x0fffffff) | 0x20000000)
 

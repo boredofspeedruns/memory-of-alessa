@@ -129,15 +129,61 @@ int func_01F6DDE0_amusement_01() {
 
 INCLUDE_ASM("asm/nonmatchings/Event/amusement_01", func_01F6DF10_amusement_01);
 
-INCLUDE_ASM("asm/nonmatchings/Event/amusement_01", func_01F6E1A0_amusement_01);
+int func_01F6E1A0_amusement_01() {
+    // entering the room with the metal spikes trap
+    int audioIsPlaying;
 
-INCLUDE_ASM("asm/nonmatchings/Event/amusement_01", func_01F6E220_amusement_01);
+    D_1D3169C |= 0x1000;
+    audioIsPlaying = func_0016CF80(15, 82, &D_01F714A0_amusement_01);
+
+    if (audioIsPlaying != 0) {
+        func_0016CF70();
+        D_1D3169C &= ~0x1000;
+    }
+
+    return audioIsPlaying;
+}
+
+int func_01F6E220_amusement_01() {
+    // going under the spikes
+    int audioIsPlaying;
+
+    D_1D3169C |= 0x1000;
+    audioIsPlaying = func_0016CF80(16, 86, &D_01F714D0_amusement_01);
+
+    if (audioIsPlaying != 0) {
+        func_0016CF70();
+        D_1D3169C &= ~0x1000;
+    }
+
+    return audioIsPlaying;
+}
 
 INCLUDE_ASM("asm/nonmatchings/Event/amusement_01", func_01F6E2A0_amusement_01);
 
-INCLUDE_ASM("asm/nonmatchings/Event/amusement_01", func_01F6E710_amusement_01);
+int func_01F6E710_amusement_01(void) {
+    int audioIsPlaying;
 
-INCLUDE_ASM("asm/nonmatchings/Event/amusement_01", func_01F6E790_amusement_01);
+    D_1D3169C |= 0x1000;
+    audioIsPlaying = func_0016CF80(17, 90, &D_01F71500_amusement_01);
+    if (audioIsPlaying != 0) {
+        func_0016CF70();
+        D_1D3169C &= ~0x1000;
+    }
+    return audioIsPlaying;
+}
+
+int func_01F6E790_amusement_01(void) {
+    int audioIsPlaying;
+
+    D_1D3169C |= 0x1000;
+    audioIsPlaying = func_0016CF80(18, 95, &D_01F71530_amusement_01);
+    if (audioIsPlaying != 0) {
+        func_0016CF70();
+        D_1D3169C &= ~0x1000;
+    }
+    return audioIsPlaying;
+}
 
 INCLUDE_ASM("asm/nonmatchings/Event/amusement_01", func_01F6E810_amusement_01);
 

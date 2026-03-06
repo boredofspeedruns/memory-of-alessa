@@ -27,6 +27,10 @@ extern int D_01F74D98_amusement_01;
 extern int D_01F74CB0_amusement_01;
 extern __int128 D_01F74680_amusement_01;
 extern int D_01F74CB0_amusement_01;
+extern int D_01F714A0_amusement_01;
+extern int D_01F714D0_amusement_01;
+extern int D_01F71500_amusement_01;
+extern int D_01F71530_amusement_01;
 
 extern float D_01F74590_amusement_01;
 extern float D_01F745F0_amusement_01;
