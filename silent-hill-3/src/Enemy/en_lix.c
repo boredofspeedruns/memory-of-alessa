@@ -1,3 +1,4 @@
+#include "common.h"
 #include "Chacter/en_common.h"
 
 INCLUDE_ASM("asm/nonmatchings/Enemy/en_lix", func_0030DB50);
