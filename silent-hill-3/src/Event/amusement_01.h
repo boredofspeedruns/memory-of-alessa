@@ -48,6 +48,11 @@ extern u_int D_1D3169C;
 extern int shCharacter_Manage_Delete(u16 kind, u16 id);
 
 extern void SeCall(float, float, int);
+extern float shAngleRegulate(float);
+extern float shGetDT();
+extern float shSinF(float);
+extern int RoomName();
+extern void func_001C2A60(int, float);
 extern void func_0016C3C0();
 extern int func_0016C1C0(int);
 extern void func_00190A20(int a0);
@@ -66,6 +71,7 @@ extern void func_001C2A70(int, float);
 extern void func_001DC9E0(SubCharacter*, int);
 extern int func_001DD9F0(SubCharacter*);   
 extern void func_001433A0(SubCharacter*, int, int);
+extern void func_0016D8F0(int);
 
 extern sceVu0FVECTOR D_01F74670_amusement_01;
 extern sceVu0FVECTOR D_01F74690_amusement_01[];
@@ -93,10 +99,9 @@ extern int D_01F74C80_amusement_01;
 extern int D_01F74C90_amusement_01;
 extern int D_01F74CB8_amusement_01;
 extern int D_01F74CF8_amusement_01;
-extern int D_01F74DB0_amusement_01;
+extern float D_01F74DB0_amusement_01;
 extern int D_1D316A0;
 extern int D_1D316AC;
-extern int RoomName();
 extern u_int D_1D31648;
 
 extern float D_01F74590_amusement_01;
