@@ -181,19 +181,19 @@ typedef struct
 typedef struct SubCharacter
 {
 
-    int index;     // 0x0
-    u_int status;  // 0x4
-    u_int step;    // 0x8
-    u_short kind;  // 0xC
-    u_short id;    // 0xE
-    u_short unk10; // 0x10
-    short unk12;   // 0x12
-    u_int sub_st;
-    u_int model_type;
-    Vector4 pos;
-    Vector4 rot;
-    Vector4 pos_spd;
-    Vector4 rot_spd;
+    int index;          // 0x0
+    u_int status;       // 0x4
+    u_int step;         // 0x8
+    u_short kind;       // 0xC
+    u_short id;         // 0xE
+    u_short unk10;      // 0x10
+    short unk12;        // 0x12
+    u_int sub_st;       // 0x14
+    u_int model_type;   // 0x16
+    Vector4 pos;        // 0x20
+    Vector4 rot;        // 0x30
+    Vector4 pos_spd;    // 0x40
+    Vector4 rot_spd;    // 0x50
     // struct /* @anon3 */
     // {
 

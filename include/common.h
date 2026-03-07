@@ -23,6 +23,8 @@ typedef unsigned int u_long128;
 #define NULL 0
 #define PI 3.1415927f
 #define QUARTER_TURN 1.5707964f
+#define RADIANS_PER_DEGREE (PI / 180.0f)
+#define TO_RAD(x) RADIANS_PER_DEGREE * (x)
 
 #define READ_UNCACHED(addr)      ((((u_int)(addr)) & 0x0fffffff) | 0x20000000)
 

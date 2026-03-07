@@ -56,7 +56,7 @@ int func_01F6D7C0_amusement_01() {
 }
 
 INCLUDE_ASM("asm/nonmatchings/Event/amusement_01", func_01F6D840_amusement_01);
-    
+
 void func_01F6DC40_amusement_01() {
     func_001C0EB0(func_01F6DC70_amusement_01, 90, 1);
     D_01F74CB0_amusement_01 = 0;
@@ -75,7 +75,7 @@ void func_01F6DCB0_amusement_01() {
     D_01F74CB0_amusement_01 = 0;
 }
 
-void func_01F6DCF0_amusement_01(__int128* arg0, s32* arg1, __int128* arg2, s32* arg3, s32* arg4) {
+static void func_01F6DCF0_amusement_01(__int128* arg0, s32* arg1, __int128* arg2, s32* arg3, s32* arg4) {
     sceVu0FVECTOR sp60;
 
     func_0018FE60((__int128*) &sp60);
@@ -127,7 +127,64 @@ int func_01F6DDE0_amusement_01() {
     return ret;
 }
 
-INCLUDE_ASM("asm/nonmatchings/Event/amusement_01", func_01F6DF10_amusement_01);
+s32 func_01F6DF10_amusement_01() {
+    s32 ret;
+    f32 angle;
+    SubCharacter* danny;
+    ret = 0;
+
+    // create Danny
+    danny = shCharacterGetSubCharacter(DANNY_CHARA_ID, DANNY_ID);
+
+    switch (D_01F74C88_amusement_01) {
+        case 0:
+            func_001DC9E0(danny, 1); // sets some status bit
+            D_01F74C88_amusement_01++;
+            func_001433A0(danny, 10015, 0); // sets an animation
+            danny->rot.y = PI;
+            func_001C2A70(1, 0.0f); // initializes a matrix?
+            danny->pos.x = 18750.0f;
+            danny->pos.z = 101000.0f;
+            D_01F74D90_amusement_01 = 0;
+            /* fallthrough */
+        case 1:
+            if ((D_1D3169C >> 0x18) & 1) {
+                D_1D3169C |= 0x1000;
+                func_001433A0(danny, 10016, 0);
+                func_0019A940();
+                D_01F74C88_amusement_01++;
+        case 2:
+                if (func_0019A9B0(0.2f) != 0) {
+                    func_0015DCD0(1.0f, 10000.0f, 15303, &danny->pos.x, 0, 0);
+                    D_01F74C88_amusement_01++;
+        case 3:
+                    angle = (&D_01F746C0_amusement_01)[D_01F74D90_amusement_01];
+                    if (angle != 0.0f) {
+                        func_001C2A70(1, TO_RAD(angle));
+                        D_01F74D90_amusement_01++;
+                    }
+                    if (func_001DD9F0(danny) != 0) {
+                        func_001433A0(danny, 10017, 0);
+                        func_0019A940();
+                        D_01F74C88_amusement_01++;
+                    case 4:
+                        if (func_0019A9B0(1.5f) != 0) {
+                            D_01F74C88_amusement_01++;
+                        }
+                    }
+                }
+            }
+            break;
+        default:
+            ret = func_0016CF80(0xE, 0x45, &D_01F71460_amusement_01);
+            if (ret != 0) {
+                D_1D3169C &= ~0x1000;
+                func_0016CF70();
+                D_01F74C88_amusement_01 = 0;
+            }
+        }
+    return ret;
+}
 
 int func_01F6E1A0_amusement_01() {
     // entering the room with the metal spikes trap
@@ -189,7 +246,12 @@ INCLUDE_ASM("asm/nonmatchings/Event/amusement_01", func_01F6E810_amusement_01);
 
 INCLUDE_ASM("asm/nonmatchings/Event/amusement_01", func_01F6E9A0_amusement_01);
 
-INCLUDE_ASM("asm/nonmatchings/Event/amusement_01", func_01F6F3C0_amusement_01);
+void func_01F6F3C0_amusement_01(void) {
+    func_001C18C0(&D_01F748B0_amusement_01);
+    D_01F748C8_amusement_01 = 409.57602f + D_01F748B8_amusement_01;
+    func_001C0EB0(func_01F6F430_amusement_01, 999999, 0);
+    D_01F74D18_amusement_01 = 2;
+}
 
 INCLUDE_ASM("asm/nonmatchings/Event/amusement_01", func_01F6F430_amusement_01);
 
@@ -202,7 +264,7 @@ int func_01F6F4E0_amusement_01(void) {
             scp->pos.x = -59676.0f;
             scp->pos.y = -8.4108f;
             scp->pos.z = 58407.0f;
-            scp->rot.y = 3.1415927f;
+            scp->rot.y = PI;
             func_001DC9E0(scp, 1);
             func_001C2290(5, 0.5f);
             func_00160AF0(10);
@@ -231,7 +293,7 @@ int func_01F6F5C0_amusement_01(void) {
         scp->pos.x = -59676.0f;
         scp->pos.y = -8.4108f;
         scp->pos.z = 58407.0f;
-        scp->rot.y = 3.1415927f;
+        scp->rot.y = PI;
         func_001DC9E0(scp, 1);
         func_001C2290(5, 0.5f);
         D_01F74C88_amusement_01 = 0;

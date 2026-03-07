@@ -4,6 +4,9 @@
 #include "common.h"
 #include "Chacter/m3_sc.h"
 
+#define DANNY_CHARA_ID 0x1043
+#define DANNY_ID 0x171
+
 typedef struct Amusement01Work {
     u_char unk_0x0[0x20];
     float x; // 0x20
@@ -18,7 +21,9 @@ int func_01F6D680_amusement_01();
 
 void func_001C0EB0(void (*)(__int128*, int*, __int128*, int*, int*), int, int);
 
-void func_01F6DCF0_amusement_01(__int128* arg0, int* arg1, __int128* arg2, int* arg3, int* arg4);
+static void func_01F6DCF0_amusement_01(__int128* arg0, int* arg1, __int128* arg2, int* arg3, int* arg4);
+
+static void func_01F6F430_amusement_01(__int128* arg0, int* arg1, __int128* arg2, int* arg3, int* arg4);
 
 static void func_01F6DC70_amusement_01(__int128* arg0, int* arg1, __int128* arg2, int* arg3, int* arg4);
 
@@ -50,7 +55,11 @@ extern int func_00160520(int);
 extern void func_00160AF0(int);                                 /* extern */
 extern void func_0019A940(void);
 extern int func_0019A9B0(float a0);
-
+extern void func_0015DCD0(float, float, int, float *, int, int);
+extern void func_001C2A70(int, float);
+extern void func_001DC9E0(SubCharacter*, int);
+extern int func_001DD9F0(SubCharacter*);   
+extern void func_001433A0(SubCharacter*, int, int);
 
 extern sceVu0FVECTOR D_01F74670_amusement_01;
 extern sceVu0FVECTOR D_01F74690_amusement_01[];
@@ -70,6 +79,9 @@ extern float D_01F74970_amusement_01;
 extern float D_01F749D0_amusement_01;
 extern float D_01F749F0_amusement_01;
 extern float D_01F74A50_amusement_01;
+extern int D_01F71460_amusement_01;
+extern float D_01F746C0_amusement_01;
+extern int D_01F74D90_amusement_01;
 extern int D_1D316AC;
 extern u_int D_1D31648;
 
@@ -80,5 +92,10 @@ extern float D_01F74570_amusement_01;
 extern int D_01F74C88_amusement_01;
 extern float D_01F74C98_amusement_01;
 extern float D_01F74CA0_amusement_01;
+
+extern __int128 D_01F748B0_amusement_01;
+extern float D_01F748B8_amusement_01;
+extern float D_01F748C8_amusement_01;
+extern int D_01F74D18_amusement_01;
 
 #endif
